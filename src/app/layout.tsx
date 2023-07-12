@@ -1,3 +1,6 @@
+import NavBar from "@/components/Navbar";
+import { ThemeProvider } from "@/context/theme-provider";
+import { ClerkProvider } from "@clerk/nextjs";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -15,8 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <NavBar />
+            <main className="bg-white dark:bg-[#1a1a1b]">{children}</main>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
