@@ -27,7 +27,7 @@ const NavBar = () => {
   const { setTheme } = useTheme();
 
   return (
-    <nav className="px-5 py-1 flex justify-between items-center border-b dark:border-b-gray-400 dark:bg-[#1a1a1b]">
+    <nav className="fixed top-0 left-0 right-0 px-3 lg:px-5 py-1 flex justify-between items-center border-b bg-[#FFFFFF] dark:border-b-gray-400 dark:bg-[#1a1a1b]">
       <div>
         <Link className="hidden lg:block" href="/">
           AReddit
@@ -39,10 +39,10 @@ const NavBar = () => {
 
       <MobileSidebarMenu />
 
-      <div className="rounded-full flex items-center pl-3 gap-2 max-w-md lg:w-4/6 bg-inherit outline outline-1 dark:bg-[#272729]">
+      <div className="group rounded-full flex items-center pl-3 gap-2 w-2/4 max-w-md lg:max-w-lg lg:w-[75%] bg-[#F6F7F8] outline outline-1 outline-gray-500 dark:bg-[#272729]">
         <Search />
         <input
-          className="w-full h-full px-3 rounded-full py-2 outline-none bg-inherit"
+          className="w-full h-full px-3 rounded-full py-2 outline-none bg-inherit group-focus:outline-white"
           placeholder="Search AReddit"
           type="search"
         />
@@ -52,7 +52,7 @@ const NavBar = () => {
         <div className="hidden lg:flex gap-3  ">
           <Button
             size="icon"
-            className="rounded-full flex gap-2 py-2 w-[140px] dark:bg-[#d7dadc] font-bold"
+            className="rounded-full flex gap-2 py-2 w-[140px] bg-[#F6F7F8] text-[#0F1A1C] dark:bg-[#d7dadc] font-bold"
           >
             <QrCodeIcon size={20} />
             <span>Get App</span>

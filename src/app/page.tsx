@@ -1,8 +1,9 @@
+import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
   return (
-    <main>
-      <h1>Reddit clone</h1>
+    <main className="bg-[#DAE0E6] dark:bg-[#030303] w-full h-screen">
+      <Sidebar />
     </main>
-    )
+  );
 }

@@ -10,7 +10,7 @@ import { HomeIcon, ChevronDown, MoveUpRightIcon } from "lucide-react";
 
 const MobileSidebarMenu = () => {
   return (
-    <div className="lg:hidden">
+    <div className="ml-1 lg:hidden">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <div className="flex gap-[2px] rounded-full">
