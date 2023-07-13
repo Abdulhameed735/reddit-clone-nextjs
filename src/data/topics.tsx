@@ -1,4 +1,11 @@
-import { BitcoinIcon, Gamepad2Icon, TrophyIcon, Tv2Icon } from "lucide-react";
+import {
+  BitcoinIcon,
+  Gamepad2Icon,
+  LandmarkIcon,
+  MoreHorizontalIcon,
+  TrophyIcon,
+  Tv2Icon,
+} from "lucide-react";
 
 export const topics = [
   {
@@ -111,6 +118,62 @@ export const topics = [
       {
         id: 5,
         name: "Young Sheldon",
+      },
+    ],
+  },
+  {
+    id: 5,
+    AccordionItemValue: "item-5",
+    AccordionTriggerName: "Business, Economics and Finance",
+    AccordionTriggerIcon: <LandmarkIcon />,
+    AccordionContent: [
+      {
+        id: 1,
+        name: "Gamestop",
+      },
+      {
+        id: 2,
+        name: "Meta",
+      },
+      {
+        id: 3,
+        name: "Space X",
+      },
+      {
+        id: 4,
+        name: "Tesla",
+      },
+      {
+        id: 5,
+        name: "Pfizer",
+      },
+    ],
+  },
+  {
+    id: 6,
+    AccordionItemValue: "item-6",
+    AccordionTriggerName: "More Topics",
+    AccordionTriggerIcon: <MoreHorizontalIcon />,
+    AccordionContent: [
+      {
+        id: 1,
+        name: "Animals and Pets",
+      },
+      {
+        id: 2,
+        name: "Anime",
+      },
+      {
+        id: 3,
+        name: "Art",
+      },
+      {
+        id: 4,
+        name: "Technology",
+      },
+      {
+        id: 5,
+        name: "Travel",
       },
     ],
   },
