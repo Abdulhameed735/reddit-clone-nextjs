@@ -27,7 +27,7 @@ const NavBar = () => {
   const { setTheme } = useTheme();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 px-3 lg:px-5 py-1 flex justify-between items-center border-b bg-[#FFFFFF] dark:border-b-gray-400 dark:bg-[#1a1a1b]">
+    <nav className="fixed z-30 top-0 left-0 right-0 px-3 lg:px-5 py-1 flex justify-between items-center border-b bg-[#FFFFFF] dark:border-b-gray-400 dark:bg-[#1a1a1b]">
       <div>
         <Link className="hidden lg:block" href="/">
           AReddit
@@ -57,7 +57,7 @@ const NavBar = () => {
             <QrCodeIcon size={20} />
             <span>Get App</span>
           </Button>
-          <Button className="rounded-full w-[140px] py-2 dark:bg-[#ff4500] dark:text-white font-bold">
+          <Button className="rounded-full w-[140px] py-2 bg-[#ff4500] hover:bg-none dark:text-white font-bold">
             Log In
           </Button>
         </div>

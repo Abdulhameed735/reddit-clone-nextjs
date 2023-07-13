@@ -15,7 +15,7 @@ import { topics } from "@/data/topics";
 
 const Sidebar = () => {
   return (
-    <aside className="fixed left-0 top-[50px] hidden lg:block w-[25%] bg-white dark:bg-[#1a1a1b] p-5 h-full">
+    <aside className="fixed left-0 hidden lg:block w-[25%] bg-white dark:bg-[#1a1a1b] p-5 h-full">
       <div className="mb-4 flex flex-col gap-3">
         <p className="text-xs text-gray-400">FEEDS</p>
 
@@ -65,7 +65,7 @@ const Sidebar = () => {
           Create an account to follow your favorite communities and start taking
           part in conversations.
         </p>
-        <Button className="rounded-full w-full py-2 dark:bg-[#ff4500] dark:text-white font-bold">
+        <Button className="rounded-full w-full py-2 bg-[#ff4500] hover:bg-none dark:text-white font-bold">
           Join reddit
         </Button>
       </div>

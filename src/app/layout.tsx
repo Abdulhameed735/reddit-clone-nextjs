@@ -21,7 +21,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn("relative", inter.className)}>
+        <body
+          className={cn(
+            "relative bg-[#DAE0E6] dark:bg-[#030303] w-full h-screen",
+            inter.className
+          )}
+        >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <NavBar />
             {children}
