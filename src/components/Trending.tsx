@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { Skeleton } from "@/components/ui/skeleton";
 import { trending } from "@/data/trending";
 import Link from "next/link";
 
@@ -12,23 +13,35 @@ const Trending = () => {
         {trending.map((trend) => (
           <Link key={trend.id} href="/">
             <div className="relative w-[250px] h-[170px] min-w-[210px] max-w-[375px] lg:w-[230px] lg:h-[150px] rounded-lg shadow-xl">
-              <Image
-                src={trend.image}
-                alt="Image"
-                className="w-full h-full object-cover rounded-lg brightness-50"
-                fill
-              />
+              {trend.image ? (
+                <Image
+                  src={trend.image}
+                  alt="Image"
+                  className="w-full h-full object-cover rounded-lg brightness-50"
+                  fill
+                />
+              ) : (
+                <Skeleton className="w-full h-full rounded-lg" />
+              )}
 
               <div className="absolute bottom-0 left-0 right-0 p-2 mt-10 text-white">
-                <h1 className="text-base font-semibold">{trend.title}</h1>
-                <p className="text-sm line-clamp-2">{trend.description}</p>
+                {trend.image && (
+                  <>
+                    <h1 className="text-base font-semibold">{trend.title}</h1>
+                    <p className="text-sm line-clamp-2">{trend.description}</p>
 
-                <div className="flex items-center gap-2 mt-3">
-                  <Avatar className="w-5 h-5">
-                    <AvatarImage src={trend.avatar} alt="avatar" />
-                  </Avatar>
-                  <p className="text-xs">{trend.community}</p>
-                </div>
+                    <div className="flex items-center gap-2 mt-3">
+                      {trend.avatar ? (
+                        <Avatar className="w-5 h-5">
+                          <AvatarImage src={trend.avatar} alt="avatar" />
+                        </Avatar>
+                      ) : (
+                        <Skeleton className="w-5 h-5 rounded-full" />
+                      )}
+                      <p className="text-xs">{trend.community}</p>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </Link>
