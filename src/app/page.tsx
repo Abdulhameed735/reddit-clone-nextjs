@@ -12,7 +12,7 @@ export default function Home() {
         <section className="absolute w-full lg:w-[75%] h-screen right-0 p-3 lg:p-8">
           <Trending />
 
-          <section className="w-full flex gap-2 mt-5 lg:mt-7">
+          <section className="w-full flex gap-4 mt-5 lg:mt-7">
             <PostContainer />
             <PostSidebar />
           </section>
