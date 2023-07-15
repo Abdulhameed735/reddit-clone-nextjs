@@ -2,7 +2,7 @@ import PostContainerHead from "@/components/ui/post-container-head";
 
 const PostContainer = () => {
   return (
-    <main className="w-[55%] lg:w-full">
+    <main className="lg:w-[55%] w-full">
       <PostContainerHead />
     </main>
   );
