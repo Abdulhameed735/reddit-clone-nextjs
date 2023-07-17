@@ -54,7 +54,7 @@ const PostContainerHead = () => {
             <MoreHorizontalIcon />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem className="flex gap-3">
+            <DropdownMenuItem className="flex gap-3 bg-[#f6f7f8]  dark:bg-[#272729]">
               <TrendingUpIcon className="text-[#878A8C] dark:text-[#1a1a1b]" />
               <span>Rising</span>
             </DropdownMenuItem>
