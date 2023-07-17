@@ -17,7 +17,7 @@ import { Button } from "./ui/button";
 
 const PostSidebar = () => {
   return (
-    <aside className="w-[45%] mt-8 hidden lg:block">
+    <aside className="w-[40%] mt-8 hidden lg:block">
       <div className="w-full bg-white dark:bg-[#1a1a1b] rounded-md outline outline-1">
         <Accordion type="single" collapsible className="w-full">
           {communities.map((community) => (
