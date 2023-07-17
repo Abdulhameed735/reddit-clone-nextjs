@@ -22,11 +22,9 @@ const PostContainerHead = () => {
         </Button>
 
         <DropdownMenu>
-          <DropdownMenuTrigger>
-            <Button className="flex items-center justify-center gap-1 rounded-full bg-[#f6f7f8] dark:hover:bg-[#303132] text-[#0079D3] dark:text-[#d7dadc] dark:bg-[#272729] px-3 h-8 py-1">
-              <span>Everywhere</span>
-              <ChevronDownIcon className="text-[#0079D3] dark:text-white" />
-            </Button>
+          <DropdownMenuTrigger className="flex items-center justify-center gap-1 rounded-full bg-[#f6f7f8] dark:hover:bg-[#303132] text-[#0079D3] dark:text-[#d7dadc] dark:bg-[#272729] px-3 h-8 py-1">
+            <span>Everywhere</span>
+            <ChevronDownIcon className="text-[#0079D3] dark:text-white" />
           </DropdownMenuTrigger>
           <DropdownMenuContent
             side="bottom"
