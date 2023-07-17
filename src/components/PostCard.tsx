@@ -8,10 +8,11 @@ import {
 } from "@/components/ui/hover-card";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { ArrowBigUpIcon, ArrowBigDownIcon } from "lucide-react";
+import Image from "next/image";
 
 const PostCard = () => {
   return (
-    <div className="flex flex-row bg-white dark:bg-[#1a1a1b] rounded-lg">
+    <div className="flex flex-row bg-white dark:bg-[#1a1a1b] rounded-lg outline outline-1 outline-[#cccccc] hover:outline-[#1a1a1b] dark:outline-[#343536] dark:hover:outline-white cursor-pointer">
       <div className="flex-col gap-3 hidden lg:flex w-[8%] p-2 lg:items-center bg-[#f6f7f8] dark:bg-[#161617] lg:rounded-tl-lg lg:rounded-bl-md">
         <ArrowBigUpIcon
           strokeWidth={1}
@@ -25,7 +26,7 @@ const PostCard = () => {
           className="hover:text-blue-500 cursor-pointer"
         />
       </div>
-      <div className="flex w-full lg:w-[92%] p-2 rounded-lg">
+      <div className="flex flex-col gap-4 w-full lg:w-[92%] p-2 rounded-lg">
         <div className="w-full flex justify-between">
           <div className="flex gap-3">
             <HoverCard>
@@ -73,6 +74,25 @@ const PostCard = () => {
           <Button className="bg-[#f6f7f8] dark:bg-white rounded-full h-7">
             Join
           </Button>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h1>
+            Classmate I have not spoken to in 5 years messages me out of the
+            blue to delete a picture I posted of myself - because her boyfriend
+            say it. (More in comments)
+          </h1>
+
+          <div className="w-full">
+            <Image
+              src="https://preview.redd.it/92zm5ua6cccb1.jpg?width=640&crop=smart&auto=webp&s=2583b2de828bbc40288d8ac45012d64f0bb9ec2c"
+              alt="image"
+              width={400}
+              height={400}
+            />
+          </div>
+
+          <div className="flex gap-3"></div>
         </div>
       </div>
     </div>

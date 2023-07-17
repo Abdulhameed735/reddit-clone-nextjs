@@ -16,7 +16,7 @@ const PostContainerHead = () => {
   return (
     <div>
       <h2 className="text-sm mb-2">Popular posts</h2>
-      <div className="p-3 flex items-center gap-3 bg-white dark:bg-[#1a1a1b] rounded-md">
+      <div className="p-3 flex items-center gap-3 bg-white dark:bg-[#1a1a1b] rounded-md cursor-pointer outline outline-1 outline-[#cccccc] hover:outline-[#1a1a1b] dark:outline-[#343536] dark:hover:outline-white">
         <Button className="flex items-center justify-center gap-1 rounded-full bg-[#f6f7f8] dark:hover:bg-[#303132] text-[#0079D3] dark:text-[#d7dadc] dark:bg-[#272729] px-3 h-8 py-1">
           <FlameIcon className="text-[#0079D3] dark:text-white" /> Hot
         </Button>

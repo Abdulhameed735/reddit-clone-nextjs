@@ -5,7 +5,11 @@ const PostContainer = () => {
   return (
     <main className="lg:w-[60%] w-full relative">
       <PostContainerHead />
-      <section className="w-full mt-5">
+      <section className="flex flex-col gap-3 w-full mt-5">
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
         <PostCard />
       </section>
     </main>

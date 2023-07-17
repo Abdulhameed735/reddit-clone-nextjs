@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "external-preview.redd.it",
       },
+      {
+        protocol: "https",
+        hostname: "preview.redd.it",
+      },
     ],
   },
 };

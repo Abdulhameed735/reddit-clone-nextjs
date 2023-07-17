@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
   Accordion,
@@ -16,9 +19,33 @@ import { Separator } from "@/components/ui/separator";
 import { Button } from "./ui/button";
 
 const PostSidebar = () => {
+  const [showButton, setShowButton] = useState<boolean>(false);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+    const threshold: number = 250;
+
+    if (scrollY > threshold) {
+      setShowButton(true);
+    } else {
+      setShowButton(false);
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <aside className="w-[40%] mt-8 hidden lg:block">
-      <div className="w-full bg-white dark:bg-[#1a1a1b] rounded-md outline outline-1">
+    <aside className="w-[40%] mt-8 hidden lg:flex flex-col items-center mx-auto relative">
+      <div className="w-full bg-white dark:bg-[#1a1a1b] rounded-md cursor-pointer outline outline-1 outline-[#cccccc] dark:outline-[#343536]">
         <Accordion type="single" collapsible className="w-full">
           {communities.map((community) => (
             <div className="border-b" key={community.id}>
@@ -87,6 +114,15 @@ const PostSidebar = () => {
           ))}
         </Accordion>
       </div>
+
+      {showButton && (
+        <Button
+          className="bg-white h-8 rounded-full fixed bottom-0 my-4"
+          onClick={scrollToTop}
+        >
+          Back to top
+        </Button>
+      )}
     </aside>
   );
 };
