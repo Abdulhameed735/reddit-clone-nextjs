@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   HomeIcon,
   ChevronDown,
@@ -65,9 +66,11 @@ const Sidebar = () => {
           Create an account to follow your favorite communities and start taking
           part in conversations.
         </p>
-        <Button className="rounded-full w-full py-2 bg-[#ff4500] hover:bg-none dark:text-white font-bold">
-          Join reddit
-        </Button>
+        <Link href="/signup">
+          <Button className="rounded-full w-full py-2 bg-[#ff4500] hover:bg-none dark:text-white font-bold">
+            Join reddit
+          </Button>
+        </Link>
       </div>
     </aside>
   );

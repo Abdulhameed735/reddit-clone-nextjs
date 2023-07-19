@@ -57,9 +57,11 @@ const NavBar = () => {
             <QrCodeIcon size={20} />
             <span>Get App</span>
           </Button>
-          <Button className="rounded-full w-[140px] py-2 bg-[#ff4500] hover:bg-none dark:text-white font-bold">
-            Log In
-          </Button>
+          <Link href="/login">
+            <Button className="rounded-full w-[140px] py-2 bg-[#ff4500] hover:bg-none dark:text-white font-bold">
+              Log In
+            </Button>
+          </Link>
         </div>
 
         <DropdownMenu>
@@ -78,10 +80,10 @@ const NavBar = () => {
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <div className="flex gap-2">
+              <Link href="login" className="flex gap-2">
                 <LogInIcon size={20} />
                 <span>Login/Sign up</span>
-              </div>
+              </Link>
             </DropdownMenuItem>
             <DropdownMenuSeparator />
 
