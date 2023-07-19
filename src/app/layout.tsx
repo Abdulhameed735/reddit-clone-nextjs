@@ -1,4 +1,3 @@
-import NavBar from "@/components/Navbar";
 import { ThemeProvider } from "@/context/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import "@/styles/globals.css";
@@ -23,12 +22,11 @@ export default function RootLayout({
       <html lang="en">
         <body
           className={cn(
-            "relative bg-[#DAE0E6] dark:bg-[#030303] w-full h-screen",
+            "bg-[#DAE0E6] dark:bg-[#030303] w-full h-screen",
             inter.className
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <NavBar />
             {children}
           </ThemeProvider>
         </body>
