@@ -1,4 +1,5 @@
 "use client";
+import { SignOutButton } from "@clerk/nextjs";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -80,10 +81,13 @@ const NavBar = () => {
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Link href="login" className="flex gap-2">
+              <Link href="/login" className="flex gap-2">
                 <LogInIcon size={20} />
                 <span>Login/Sign up</span>
               </Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <SignOutButton />
             </DropdownMenuItem>
             <DropdownMenuSeparator />
 

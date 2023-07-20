@@ -1,3 +1,7 @@
+"use client";
+import { useState } from "react";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -9,21 +13,56 @@ import {
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { ArrowBigUpIcon, ArrowBigDownIcon } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const PostCard = () => {
+  const [isUpvoted, setIsUpvoted] = useState<boolean>(false);
+  const [isDownvoted, setIsDownvoted] = useState<boolean>(false);
+
+  const { isSignedIn } = useUser();
+  const router = useRouter();
+
+  const handleUpVoteClick = () => {
+    if (!isSignedIn) {
+      router.push("/login");
+    } else {
+      setIsUpvoted((prevState) => !isUpvoted);
+      setIsDownvoted(false);
+    }
+  };
+
+  const handleDownVoteClick = () => {
+    if (!isSignedIn) {
+      router.push("/login");
+    } else {
+      setIsDownvoted((prevState) => !isDownvoted);
+      setIsUpvoted(false);
+    }
+  };
+
   return (
     <div className="flex flex-row bg-white dark:bg-[#1a1a1b] rounded-lg outline outline-1 outline-[#cccccc] hover:outline-[#1a1a1b] dark:outline-[#343536] dark:hover:outline-white cursor-pointer">
       <div className="flex-col gap-3 hidden lg:flex w-[8%] p-2 lg:items-center bg-[#f6f7f8] dark:bg-[#161617] lg:rounded-tl-lg lg:rounded-bl-md">
         <ArrowBigUpIcon
           strokeWidth={1}
           size={30}
-          className="hover:text-red-500 cursor-pointer"
+          fill={isUpvoted ? "#EF4444" : "none"}
+          className={cn(
+            "hover:text-red-500 cursor-pointer",
+            isUpvoted ? "text-red-500" : ""
+          )}
+          onClick={handleUpVoteClick}
         />
         <span className="text-sm">53.8k</span>
         <ArrowBigDownIcon
           strokeWidth={1}
           size={30}
-          className="hover:text-blue-500 cursor-pointer"
+          fill={isDownvoted ? "#3B82F6" : "none"}
+          className={cn(
+            "hover:text-blue-500 cursor-pointer",
+            isDownvoted ? "text-blue-500" : ""
+          )}
+          onClick={handleDownVoteClick}
         />
       </div>
       <div className="flex flex-col gap-4 w-full lg:w-[92%] p-2 rounded-lg">
