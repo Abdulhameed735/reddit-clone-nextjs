@@ -1,6 +1,5 @@
 "use client";
 import { useUser, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { SignOutButton } from "@clerk/nextjs";
 import Link from "next/link";
 import {
   DropdownMenu,
