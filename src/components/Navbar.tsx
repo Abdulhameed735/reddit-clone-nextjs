@@ -1,5 +1,5 @@
 "use client";
-import { useUser, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import {
   DropdownMenu,
@@ -26,7 +26,6 @@ import MobileSidebarMenu from "./ui/mobile-sidebar-menu";
 
 const NavBar = () => {
   const { setTheme } = useTheme();
-  const { isSignedIn, user } = useUser();
 
   return (
     <nav className="fixed z-30 top-0 left-0 right-0 px-3 lg:px-5 py-1 flex justify-between items-center border-b bg-[#FFFFFF] dark:border-b-gray-400 dark:bg-[#1a1a1b]">
